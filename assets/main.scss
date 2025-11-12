@@ -1,0 +1,18 @@
+/* assets/main.scss */
+@import "minima";
+
+.hero {
+  background: linear-gradient(180deg, #fff 0%, #f7f7fb 100%);
+  padding: 48px 0;
+  text-align: center;
+}
+.hero .lead { font-size:1.125rem; color:#444; }
+.cta {
+  background:#0b64d9; color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none;
+}
+.wrap { max-width:900px; margin:0 auto; padding:0 16px; }
+.site-header { border-bottom:1px solid #eee; padding:12px 0; }
+.main-nav a { margin-left:18px; text-decoration:none; color:#333; }
+.site-footer { border-top:1px solid #eee; padding:28px 0; margin-top:40px; color:#666; }
+.posts li { margin:12px 0; }
+.meta { color:#888; margin-left:8px; font-size:.9rem; }

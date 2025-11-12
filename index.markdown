@@ -1,6 +1,6 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+title: Home
 ---
+
+Welcome — this is the hub for BEAFC. Scroll down for recent posts, or hit Contact to get a proposal.
