@@ -2,7 +2,7 @@
 layout: post
 title: "0006_Apa itu Pull System dalam Toyota Way"
 excerpt: "Gunakan Pull Sistem untuk menghindari produksi berlebih."
-date: 2025-11-015
+date: 2025-11-15
 ---
 
 # Apa itu Pull System dalam Toyota Way
