@@ -27,6 +27,7 @@ url: "https://beafc.com"
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 permalink: /:categories/:year/:month/:day/:title/
 markdown: kramdown
 

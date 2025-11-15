@@ -1,0 +1,54 @@
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="{{ "/" | relative_url }}">KAIZEN MAN</a>
+
+    <div class="nav-links">
+      <a href="{{ "/" | relative_url }}">Home</a>
+      <a href="{{ "/blog" | relative_url }}">Blog</a>
+      <a href="{{ "/about" | relative_url }}">About</a>
+      <a href="{{ "/contact" | relative_url }}">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.6);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  }
+
+  .nav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 18px;
+    color: #e2e8f0;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links a {
+    margin-left: 20px;
+    color: #94a3b8;
+    font-size: 15px;
+    transition: 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: #38bdf8;
+  }
+
+  @media (max-width: 700px) {
+    .nav-links a { margin-left: 12px; }
+  }
+</style>

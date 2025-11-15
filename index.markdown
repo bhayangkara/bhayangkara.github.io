@@ -1,6 +1,4 @@
 ---
 layout: home
-title: Home
+title: "KAIZEN MAN — Menuju Pabrik #1 di Dunia"
 ---
-
-Welcome — this is the hub for BEAFC. Scroll down for recent posts, or hit Contact to get a proposal.

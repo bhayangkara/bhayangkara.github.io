@@ -1,0 +1,58 @@
+  KAIZEN MAN — Menuju Pabrik #1 di Dunia        :root { --bg: #0b1220; --card: #0f172a; --muted: #94a3b8; --text: #e2e8f0; --accent: #38bdf8; --success: #22c55e; --ring: rgba(56, 189, 248, 0.55); } \* { box-sizing: border-box; } html, body { height: 100%; } body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,.12), transparent 60%), radial-gradient(1000px 600px at -10% 110%, rgba(34,197,94,.10), transparent 60%), var(--bg); color: var(--text); line-height: 1.6; } a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; } .container { max-width: 1080px; margin: 0 auto; padding: 24px; } .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(148,163,184,.15); border-radius: 18px; backdrop-filter: blur(6px); box-shadow: 0 10px 30px rgba(2,8,23,.45); } header.hero { padding: 72px 24px 48px; text-align: center; } .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: rgba(148,163,184,.12); border: 1px solid rgba(148,163,184,.2); padding: 8px 12px; border-radius: 999px; } h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; margin: 16px 0 12px; letter-spacing: -0.02em; } .lead { font-size: clamp(16px, 2vw, 18px); color: var(--muted); max-width: 760px; margin: 0 auto 24px; } .cta { display: inline-flex; gap: 12px; align-items: center; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(56,189,248,.5); color: var(--text); background: linear-gradient(180deg, rgba(56,189,248,.18), rgba(56,189,248,.10)); box-shadow: 0 6px 20px rgba(56,189,248,.18); transition: transform .12s ease, box-shadow .12s ease; } .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(56,189,248,.22); text-decoration: none; } .grid { display: grid; gap: 20px; grid-template-columns: repeat(12, 1fr); } .col-7 { grid-column: span 7; } .col-5 { grid-column: span 5; } @media (max-width: 900px) { .col-7, .col-5 { grid-column: 1 / -1; } } h2 { font-size: clamp(22px, 3.2vw, 28px); margin: 0 0 12px; letter-spacing: -0.01em; } p { margin: 0 0 12px; } ul { margin: 0; padding-left: 18px; } .pill { display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid rgba(148,163,184,.25); color:var(--muted); font-size:12px; } .kpi { display:flex; gap:16px; align-items:center; padding:14px; border-radius:14px; border:1px dashed rgba(148,163,184,.25); } .kpi strong { font-size:22px; letter-spacing:-.02em; } footer { color: #94a3b8; font-size: 12px; text-align: center; padding: 28px 0 60px; } .marker { background: linear-gradient(120deg, rgba(56,189,248,.35), rgba(34,197,94,.35)); padding: .05em .25em; border-radius: 6px; } .divider { height:1px; background: linear-gradient(90deg, rgba(148,163,184,.0), rgba(148,163,184,.35), rgba(148,163,184,.0)); margin: 28px 0; } .check { width: 16px; height: 16px; border-radius: 4px; background: rgba(34,197,94,.2); border:1px solid rgba(34,197,94,.5); display:grid; place-items:center; } .check svg { width:12px; height:12px; fill: var(--success); } { "@context": "https://schema.org", "@type": "Organization", "name": "BEAFC", "url": "https://beafc.com", "description": "Implementasi lapangan TPS & Lean Manufacturing untuk pabrik yang ingin jadi nomor satu di dunia.", "logo": "https://beafc.com/logo.png", "sameAs": \[\] }
+
+Kaizen • TPS • Lean Manufacturing
+
+KAIZEN MAN
+==========
+
+Perjuangan _tanpa lelah_ menuju **Pabrik #1 di Dunia** — setiap hari sedikit lebih baik — dengan prinsip **Toyota Production System (TPS)** dan **Lean Manufacturing** yang dibuktikan di lantai produksi.
+
+[⚡ Mulai Perbaikan Hari Ini](#mulai)  
+  
+[📚 Kunjungi Blog Kaizen](/blog)
+
+Semangat Kaizen: Menang 1% Setiap Hari
+--------------------------------------
+
+Kaizen Man adalah sosok di gemba yang **tidak pernah berhenti**: melihat masalah sebagai peluang, bereksperimen cepat, mengajak tim maju bersama, dan menjaga disiplin eksekusi. Bukan teori — _aksi nyata_.
+
+Prinsip TPS & Lean yang Kami Hidupkan
+-------------------------------------
+
+*   Jidoka — kualitas dibangun di proses; hentikan untuk memperbaiki, bukan melewati.
+*   Just‑in‑Time — alirkan nilai dengan takt time, pull system, dan heijunka.
+*   Eliminasi Muda, Muri, Mura — hapus pemborosan, beban berlebih, dan ketidakteraturan.
+*   Gemba First — lihat langsung, tanya “mengapa”, hormati manusia.
+*   Standar Kerja Hidup — standar sebagai baseline inovasi berikutnya.
+
+Artikel Singkat: Jalan Panjang Menuju #1
+----------------------------------------
+
+Menjadi nomor satu bukan hasil satu proyek, melainkan **ribuan perbaikan kecil** yang konsisten. Di setiap stasiun kerja, Kaizen Man memetakan aliran nilai, mengangkat masalah ke permukaan, dan memfasilitasi eksperimen yang aman dan cepat. Targetnya jelas: _lead time lebih pendek_, _kualitas tanpa kompromi_, dan _aliran kerja mulus_ yang membuat pelanggan tersenyum.
+
+Dengan **obeya** yang transparan, **daily huddle** yang menyalakan energi, serta **visual management** yang jernih, tim bergerak sebagai satu tubuh. Inilah _kaizen yang hidup_ — budaya yang membuat pabrik tidak sekadar kompetitif, tetapi layak menyandang gelar **pabrik terbaik di dunia**.
+
+Fokus Implementasi
+------------------
+
+**Lead Time ↓**  
+Kurangi menunggu, transport, & WIP berlebih.
+
+**Kualitas Naik**  
+Jidoka, poka‑yoke, problem solving di sumber.
+
+**Biaya Turun**  
+Hilangkan pemborosan yang tak menambah nilai.
+
+Siap Kaizen Hari Ini?
+---------------------
+
+Mulai dari satu area pilot. Kita ukur, kita perbaiki, lalu kita scale.
+
+[📨 Jadwalkan Kaizen Pilot](mailto:agung.theprofessional@gmail.com?subject=Mulai%20Kaizen%20Pilot)
+
+Atau hubungi WA: 0813‑1029‑6000
+
+© BEAFC — Build Efficiency and Flow Culture • Made at Gemba
+
+document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,27 +1,269 @@
----
-layout: default
----
-<section class="hero">
-  <div class="wrap">
-    <h1>{{ site.title }}</h1>
-    <p class="lead">{{ site.description }}</p>
-    <p>
-      <a class="cta" href="#contact">Get in touch</a>
-      <a class="muted" href="/portfolio">See portfolio</a>
-    </p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | default: "KAIZEN MAN — Menuju Pabrik #1 di Dunia" }}</title>
+  <meta name="description" content="Kaizen Man: Perjuangan tanpa lelah menuju pabrik nomor satu di dunia dengan prinsip Toyota Production System (TPS) dan Lean Manufacturing." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="KAIZEN MAN — Menuju Pabrik #1 di Dunia" />
+  <meta property="og:description" content="Perjuangan tanpa lelah dengan prinsip TPS & Lean Manufacturing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230f172a'/%3E%3Cpath d='M30 65 L50 20 L70 65' stroke='%23fff' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='75' r='6' fill='%23fff'/%3E%3C/svg%3E" />
 
-<section class="content">
-  <div class="wrap">
-    <h2>Latest posts</h2>
-    <ul class="posts">
-      {% for post in site.posts limit:5 %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="meta">— {{ post.date | date: "%b %-d, %Y" }}</span>
-      </li>
-      {% endfor %}
-    </ul>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+      --success: #22c55e;
+      --ring: rgba(56, 189, 248, 0.55);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(56,189,248,.12), transparent 60%),
+        radial-gradient(1000px 600px at -10% 110%, rgba(34,197,94,.10), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(148,163,184,.15);
+      border-radius: 18px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(2,8,23,.45);
+    }
+    header.hero {
+      padding: 72px 24px 48px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(148,163,184,.12);
+      border: 1px solid rgba(148,163,184,.2);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.05;
+      margin: 16px 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 24px;
+    }
+    .cta {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(56,189,248,.5);
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(56,189,248,.18), rgba(56,189,248,.10));
+      box-shadow: 0 6px 20px rgba(56,189,248,.18);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(56,189,248,.22);
+      text-decoration: none;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-7 { grid-column: span 7; }
+    .col-5 { grid-column: span 5; }
+    @media (max-width: 900px) {
+      .col-7, .col-5 { grid-column: 1 / -1; }
+    }
+    h2 {
+      font-size: clamp(22px, 3.2vw, 28px);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    .pill {
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.25);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .kpi {
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:14px;
+      border-radius:14px;
+      border:1px dashed rgba(148,163,184,.25);
+    }
+    .kpi strong {
+      font-size:22px;
+      letter-spacing:-.02em;
+    }
+    footer {
+      color: #94a3b8;
+      font-size: 12px;
+      text-align: center;
+      padding: 28px 0 60px;
+    }
+    .marker {
+      background: linear-gradient(120deg, rgba(56,189,248,.35), rgba(34,197,94,.35));
+      padding: .05em .25em;
+      border-radius: 6px;
+    }
+    .divider {
+      height:1px;
+      background: linear-gradient(90deg, rgba(148,163,184,.0), rgba(148,163,184,.35), rgba(148,163,184,.0));
+      margin: 28px 0;
+    }
+    .check {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background: rgba(34,197,94,.2);
+      border:1px solid rgba(34,197,94,.5);
+      display:grid;
+      place-items:center;
+    }
+    .check svg { width:12px; height:12px; fill: var(--success); }
+    .muted { color: var(--muted); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BEAFC",
+    "url": "https://beafc.com",
+    "description": "Implementasi lapangan TPS & Lean Manufacturing untuk pabrik yang ingin jadi nomor satu di dunia.",
+    "logo": "https://beafc.com/logo.png",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+{% include nav.html %}
+  <div class="container">
+    <header class="hero card">
+      <span class="badge">Kaizen • TPS • Lean Manufacturing</span>
+      <h1>KAIZEN <span class="marker">MAN</span></h1>
+      <p class="lead">
+        Perjuangan <em>tanpa lelah</em> menuju <strong>Pabrik #1 di Dunia</strong> — setiap hari sedikit lebih baik —
+        dengan prinsip <strong>Toyota Production System (TPS)</strong> dan <strong>Lean Manufacturing</strong> yang dibuktikan di lantai produksi.
+      </p>
+      <a class="cta" href="#mulai">⚡ Mulai Perbaikan Hari Ini</a>
+      <br><br>
+      <a class="cta" href="/blog">📚 Kunjungi Blog Kaizen</a>
+    </header>
+
+    <main class="grid" style="margin-top: 26px;">
+      <section class="col-7 card" style="padding: 22px;">
+        <h2>Semangat Kaizen: Menang 1% Setiap Hari</h2>
+        <p>
+          Kaizen Man adalah sosok di gemba yang <strong>tidak pernah berhenti</strong>: melihat masalah sebagai peluang,
+          bereksperimen cepat, mengajak tim maju bersama, dan menjaga disiplin eksekusi. Bukan teori — <em>aksi nyata</em>.
+        </p>
+        <div class="divider"></div>
+        <h2>Prinsip TPS & Lean yang Kami Hidupkan</h2>
+        <ul>
+          <li><span class="pill">Jidoka</span> — kualitas dibangun di proses; hentikan untuk memperbaiki, bukan melewati.</li>
+          <li><span class="pill">Just-in-Time</span> — alirkan nilai dengan takt time, pull system, dan heijunka.</li>
+          <li><span class="pill">Eliminasi Muda, Muri, Mura</span> — hapus pemborosan, beban berlebih, dan ketidakteraturan.</li>
+          <li><span class="pill">Gemba First</span> — lihat langsung, tanya “mengapa”, hormati manusia.</li>
+          <li><span class="pill">Standar Kerja Hidup</span> — standar sebagai baseline inovasi berikutnya.</li>
+        </ul>
+        <div class="divider"></div>
+        <h2>Artikel Singkat: Jalan Panjang Menuju #1</h2>
+        <p>
+          Menjadi nomor satu bukan hasil satu proyek, melainkan <strong>ribuan perbaikan kecil</strong> yang konsisten.
+          Di setiap stasiun kerja, Kaizen Man memetakan aliran nilai, mengangkat masalah ke permukaan, dan memfasilitasi
+          eksperimen yang aman dan cepat. Targetnya jelas: <em>lead time lebih pendek</em>, <em>kualitas tanpa kompromi</em>,
+          dan <em>aliran kerja mulus</em> yang membuat pelanggan tersenyum.
+        </p>
+        <p>
+          Dengan <strong>obeya</strong> yang transparan, <strong>daily huddle</strong> yang menyalakan energi, serta
+          <strong>visual management</strong> yang jernih, tim bergerak sebagai satu tubuh. Inilah <em>kaizen yang hidup</em> —
+          budaya yang membuat pabrik tidak sekadar kompetitif, tetapi layak menyandang gelar <strong>pabrik terbaik di dunia</strong>.
+        </p>
+      </section>
+
+      <aside class="col-5" aria-label="Sorotan & KPI">
+        <div class="card" style="padding: 18px; margin-bottom: 20px;">
+          <h2 style="margin-bottom: 6px;">Fokus Implementasi</h2>
+          <div class="kpi">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.285 6.708a1 1 0 0 1 .007 1.414l-9.192 9.286a1 1 0 0 1-1.437 0l-5.955-6.018a1 1 0 1 1 1.43-1.397l5.237 5.292 8.474-8.556a1 1 0 0 1 1.436-.02z"/></svg>
+            </span>
+            <div>
+              <strong>Lead Time ↓</strong><br>
+              <small class="muted">Kurangi menunggu, transport, & WIP berlebih.</small>
+            </div>
+          </div>
+
+          <div class="kpi">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.285 6.708a1 1 0 0 1 .007 1.414l-9.192 9.286a1 1 0 0 1-1.437 0l-5.955-6.018a1 1 0 1 1 1.43-1.397l5.237 5.292 8.474-8.556a1 1 0 0 1 1.436-.02z"/></svg>
+            </span>
+            <div>
+              <strong>Kualitas Naik</strong><br>
+              <small class="muted">Jidoka, poka-yoke, problem solving di sumber.</small>
+            </div>
+          </div>
+
+          <div class="kpi">
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.285 6.708a1 1 0 0 1 .007 1.414l-9.192 9.286a1 1 0 0 1-1.437 0l-5.955-6.018a1 1 0 1 1 1.43-1.397l5.237 5.292 8.474-8.556a1 1 0 0 1 1.436-.02z"/></svg>
+            </span>
+            <div>
+              <strong>Biaya Turun</strong><br>
+              <small class="muted">Hilangkan pemborosan yang tak menambah nilai.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" id="mulai" style="padding: 18px;">
+          <h2 style="margin-bottom: 6px;">Siap Kaizen Hari Ini?</h2>
+          <p style="margin-bottom:12px;">Mulai dari satu area pilot. Kita ukur, kita perbaiki, lalu kita scale.</p>
+          <a class="cta" href="mailto:agung.theprofessional@gmail.com?subject=Mulai%20Kaizen%20Pilot">📨 Jadwalkan Kaizen Pilot</a>
+          <p style="margin-top:12px; color: var(--muted); font-size: 12px;">Atau hubungi WA: 0813-1029-6000</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> BEAFC — Build Efficiency and Flow Culture • Made at Gemba
+    </footer>
   </div>
-</section>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

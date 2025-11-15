@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beafc.com/sitemap.xml
